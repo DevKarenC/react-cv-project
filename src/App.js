@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Section from "./components/Section";
+import General from "./components/General";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
 
 class App extends Component {
   constructor() {
@@ -10,9 +12,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Section sectionName="General Information" />
-        <Section sectionName="Education" />
-        <Section sectionName="Experience" />
+        <General />
+        <Education />
+        <Experience />
+        <button type="submit">Edit/Submit</button>
       </div>
     );
   }
