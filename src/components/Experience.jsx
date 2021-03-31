@@ -3,8 +3,29 @@ import React from "react";
 class Experience extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      companyName: "",
+      position: "",
+      employmentDates: "",
+      responsibilities: "",
+    };
   }
+
+  handleCompanyNameChange = (e) => {
+    this.setState({ companyName: e.target.value });
+  };
+
+  handlePositionChange = (e) => {
+    this.setState({ position: e.target.value });
+  };
+
+  handleEmploymentDatesChange = (e) => {
+    this.setState({ employmentDates: e.target.value });
+  };
+
+  handleGraduationDateChange = (e) => {
+    this.setState({ graduationDate: e.target.value });
+  };
 
   render() {
     return (
@@ -13,17 +34,35 @@ class Experience extends React.Component {
         <form>
           <label>
             Company Name
-            <input type="text" />
+            <input
+              type="text"
+              value={this.state.companyName}
+              onChange={this.handleCompanyNameChange}
+            />
           </label>
           <label>
-            Position Title <input type="text" />
+            Position Title{" "}
+            <input
+              type="text"
+              value={this.state.position}
+              onChange={this.handlePositionChange}
+            />
           </label>
           <label>
-            Employment Dates <input type="text" />
+            Employment Dates{" "}
+            <input
+              type="text"
+              value={this.state.employmentDates}
+              onChange={this.handleEmploymentDatesChange}
+            />
           </label>
           <label>
             Responsibilities
-            <input type="text" />
+            <input
+              type="text"
+              value={this.state.responsibilities}
+              onChange={this.handleResponsibilitiesChange}
+            />
           </label>
         </form>
         <hr />

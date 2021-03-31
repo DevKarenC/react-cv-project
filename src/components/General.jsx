@@ -3,8 +3,24 @@ import React from "react";
 class General extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      name: "",
+      email: "",
+      phone: "",
+    };
   }
+
+  handleNameChange = (e) => {
+    this.setState({ name: e.target.value });
+  };
+
+  handleEmailChange = (e) => {
+    this.setState({ email: e.target.value });
+  };
+
+  handlePhoneChange = (e) => {
+    this.setState({ phone: e.target.value });
+  };
 
   render() {
     return (
@@ -13,15 +29,27 @@ class General extends React.Component {
         <form>
           <label>
             Name
-            <input type="text" />
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.handleNameChange}
+            />
           </label>
           <label>
             Email
-            <input type="text" />
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.handleEmailChange}
+            />
           </label>
           <label>
             Phone
-            <input type="text" />
+            <input
+              type="text"
+              value={this.state.phone}
+              onChange={this.handlePhoneChange}
+            />
           </label>
         </form>
         <hr />

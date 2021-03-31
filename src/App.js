@@ -6,17 +6,28 @@ import Experience from "./components/Experience";
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      isSubmitted: false,
+    };
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.isSubmitted) {
+      this.setState({ isSubmitted: false });
+    } else {
+      this.setState({ isSubmitted: true });
+    }
+  };
 
   render() {
     return (
-      <div>
+      <form onSubmit={this.handleSubmit}>
         <General />
         <Education />
         <Experience />
         <button type="submit">Edit/Submit</button>
-      </div>
+      </form>
     );
   }
 }
