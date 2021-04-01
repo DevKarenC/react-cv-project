@@ -26,32 +26,43 @@ class General extends React.Component {
     return (
       <div>
         <h1>General Information </h1>
-        <form>
-          <label>
-            Name
-            <input
-              type="text"
-              value={this.state.name}
-              onChange={this.handleNameChange}
-            />
-          </label>
-          <label>
-            Email
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.handleEmailChange}
-            />
-          </label>
-          <label>
-            Phone
-            <input
-              type="text"
-              value={this.state.phone}
-              onChange={this.handlePhoneChange}
-            />
-          </label>
-        </form>
+        {this.props.isSubmitted ? (
+          <form>
+            <label>Name</label>
+            <p>{this.state.name}</p>
+            <label>Email</label>
+            <p>{this.state.email}</p>
+            <label>Phone</label>
+            <p>{this.state.phone}</p>
+          </form>
+        ) : (
+          <form>
+            <label>
+              Name
+              <input
+                type="text"
+                value={this.state.name}
+                onChange={this.handleNameChange}
+              />
+            </label>
+            <label>
+              Email
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.handleEmailChange}
+              />
+            </label>
+            <label>
+              Phone
+              <input
+                type="text"
+                value={this.state.phone}
+                onChange={this.handlePhoneChange}
+              />
+            </label>
+          </form>
+        )}
         <hr />
       </div>
     );
