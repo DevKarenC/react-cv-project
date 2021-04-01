@@ -23,9 +23,9 @@ class App extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <General />
-        <Education />
-        <Experience />
+        <General isSubmitted={this.state.isSubmitted} />
+        <Education isSubmitted={this.state.isSubmitted} />
+        <Experience isSubmitted={this.state.isSubmitted} />
         <button type="submit">Edit/Submit</button>
       </form>
     );
