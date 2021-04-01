@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 5rem;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+label,
+input {
+  font-family: "Lexend", sans-serif;
+  letter-spacing: 1px;
+}
+
+button {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+}
