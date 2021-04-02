@@ -30,7 +30,10 @@ class Experience extends React.Component {
   render() {
     return (
       <div>
-        <h1>Experience</h1>
+        <div className="heading">
+          <h1>Experience</h1>
+          <button className="add-section">+</button>
+        </div>
         {this.props.isSubmitted ? (
           <form>
             <label>Company Name</label>

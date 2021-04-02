@@ -15,7 +15,28 @@ input {
   letter-spacing: 1px;
 }
 
-button {
+button[type="submit"] {
+  color: #fff;
   font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
   letter-spacing: 1px;
+  border: 1px solid #3065a5;
+  border-radius: 5px;
+  background-color: #3065a5;
+  padding: 0.75rem 1rem;
+}
+
+.heading {
+  display: flex;
+}
+
+.add-section {
+  border: 1px solid #3065a5;
+  border-radius: 50%;
+  background-color: #3065a5;
+  color: #fff;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
 }

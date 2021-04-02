@@ -30,7 +30,10 @@ class Education extends React.Component {
   render() {
     return (
       <div>
-        <h1>Education</h1>
+        <div className="heading">
+          <h1>Education</h1>
+          <button className="add-section">+</button>
+        </div>
         {this.props.isSubmitted ? (
           <form>
             <label>School</label>
