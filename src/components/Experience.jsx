@@ -29,10 +29,9 @@ class Experience extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="section">
         <div className="heading">
           <h1>Experience</h1>
-          <button className="add-section">+</button>
         </div>
         {this.props.isSubmitted ? (
           <form>
@@ -46,42 +45,34 @@ class Experience extends React.Component {
             <p>{this.state.responsibilities}</p>
           </form>
         ) : (
-          <form>
-            <label>
-              Company Name
-              <input
-                type="text"
-                value={this.state.companyName}
-                onChange={this.handleCompanyNameChange}
-              />
-            </label>
-            <label>
-              Position Title{" "}
-              <input
-                type="text"
-                value={this.state.position}
-                onChange={this.handlePositionChange}
-              />
-            </label>
-            <label>
-              Employment Dates{" "}
-              <input
-                type="text"
-                value={this.state.employmentDates}
-                onChange={this.handleEmploymentDatesChange}
-              />
-            </label>
-            <label>
-              Responsibilities
-              <input
-                type="text"
-                value={this.state.responsibilities}
-                onChange={this.handleResponsibilitiesChange}
-              />
-            </label>
+          <form className="edit-input">
+            <label>Company Name</label>
+            <input
+              type="text"
+              value={this.state.companyName}
+              onChange={this.handleCompanyNameChange}
+            />
+            <label>Position Title </label>
+            <input
+              type="text"
+              value={this.state.position}
+              onChange={this.handlePositionChange}
+            />
+            <label>Employment Dates </label>
+            <input
+              type="text"
+              value={this.state.employmentDates}
+              onChange={this.handleEmploymentDatesChange}
+            />
+            <label>Responsibilities</label>
+            <input
+              type="text"
+              value={this.state.responsibilities}
+              onChange={this.handleResponsibilitiesChange}
+            />
+            <button className="add-section">Add Experience</button>
           </form>
         )}
-        <hr />
       </div>
     );
   }

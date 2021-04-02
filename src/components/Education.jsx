@@ -29,10 +29,9 @@ class Education extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="section">
         <div className="heading">
           <h1>Education</h1>
-          <button className="add-section">+</button>
         </div>
         {this.props.isSubmitted ? (
           <form>
@@ -46,42 +45,34 @@ class Education extends React.Component {
             <p>{this.state.graduationDate}</p>
           </form>
         ) : (
-          <form>
-            <label>
-              School
-              <input
-                type="text"
-                value={this.state.school}
-                onChange={this.handleSchoolChange}
-              />
-            </label>
-            <label>
-              Major
-              <input
-                type="text"
-                value={this.state.major}
-                onChange={this.handleMajorChange}
-              />
-            </label>
-            <label>
-              Degree
-              <input
-                type="text"
-                value={this.state.degree}
-                onChange={this.handleDegreeChange}
-              />
-            </label>
-            <label>
-              Graduation Month/Year
-              <input
-                type="text"
-                value={this.state.graduationDate}
-                onChange={this.handleGraduationDateChange}
-              />
-            </label>
+          <form className="edit-input">
+            <label>School</label>
+            <input
+              type="text"
+              value={this.state.school}
+              onChange={this.handleSchoolChange}
+            />
+            <label>Major</label>
+            <input
+              type="text"
+              value={this.state.major}
+              onChange={this.handleMajorChange}
+            />
+            <label>Degree</label>
+            <input
+              type="text"
+              value={this.state.degree}
+              onChange={this.handleDegreeChange}
+            />
+            <label>Graduation Month/Year</label>
+            <input
+              type="text"
+              value={this.state.graduationDate}
+              onChange={this.handleGraduationDateChange}
+            />
+            <button className="add-section">Add Education</button>
           </form>
         )}
-        <hr />
       </div>
     );
   }

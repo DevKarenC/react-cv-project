@@ -4,14 +4,14 @@ class General extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      fullName: "",
       email: "",
       phone: "",
     };
   }
 
-  handleNameChange = (e) => {
-    this.setState({ name: e.target.value });
+  handleFullNameChange = (e) => {
+    this.setState({ fullName: e.target.value });
   };
 
   handleEmailChange = (e) => {
@@ -24,46 +24,39 @@ class General extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="section">
         <h1>General Information </h1>
         {this.props.isSubmitted ? (
           <form>
-            <label>Name</label>
-            <p>{this.state.name}</p>
+            <label>Full Name</label>
+            <p>{this.state.fullName}</p>
             <label>Email</label>
             <p>{this.state.email}</p>
             <label>Phone</label>
             <p>{this.state.phone}</p>
           </form>
         ) : (
-          <form>
-            <label>
-              Name
-              <input
-                type="text"
-                value={this.state.name}
-                onChange={this.handleNameChange}
-              />
-            </label>
-            <label>
-              Email
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.handleEmailChange}
-              />
-            </label>
-            <label>
-              Phone
-              <input
-                type="text"
-                value={this.state.phone}
-                onChange={this.handlePhoneChange}
-              />
-            </label>
+          <form className="edit-input">
+            <label>Full Name</label>
+            <input
+              type="text"
+              value={this.state.fullName}
+              onChange={this.handleFullNameChange}
+            />
+            <label>Email</label>
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.handleEmailChange}
+            />
+            <label>Phone</label>
+            <input
+              type="text"
+              value={this.state.phone}
+              onChange={this.handlePhoneChange}
+            />
           </form>
         )}
-        <hr />
       </div>
     );
   }

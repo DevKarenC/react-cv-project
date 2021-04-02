@@ -14,6 +14,9 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  handleClick = (e) => {
     if (this.state.isSubmitted) {
       this.setState({ isSubmitted: false });
     } else {
@@ -27,7 +30,9 @@ class App extends Component {
         <General isSubmitted={this.state.isSubmitted} />
         <Education isSubmitted={this.state.isSubmitted} />
         <Experience isSubmitted={this.state.isSubmitted} />
-        <button type="submit">Edit/Submit</button>
+        <button type="submit" onClick={this.handleClick}>
+          Edit/Submit
+        </button>
       </form>
     );
   }
