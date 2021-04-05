@@ -34,7 +34,7 @@ class Experience extends React.Component {
           <h1>Experience</h1>
         </div>
         {this.props.isSubmitted ? (
-          <form>
+          <div>
             <label>Company Name</label>
             <p>{this.state.companyName}</p>
             <label>Position Title</label>
@@ -43,9 +43,9 @@ class Experience extends React.Component {
             <p>{this.state.employmentDates}</p>
             <label>Responsibilities</label>
             <p>{this.state.responsibilities}</p>
-          </form>
+          </div>
         ) : (
-          <form className="edit-input">
+          <div className="edit-input">
             <label>Company Name</label>
             <input
               type="text"
@@ -71,7 +71,7 @@ class Experience extends React.Component {
               onChange={this.handleResponsibilitiesChange}
             />
             <button className="add-section">Add Experience</button>
-          </form>
+          </div>
         )}
       </div>
     );

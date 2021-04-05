@@ -1,30 +1,21 @@
 import React from "react";
+import EducationForm from "./EducationForm";
 
 class Education extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      school: "",
-      major: "",
-      degree: "",
-      graduationDate: "",
+      educationList: [<EducationForm isSubmitted={this.props.isSubmitted} />],
     };
   }
 
-  handleSchoolChange = (e) => {
-    this.setState({ school: e.target.value });
-  };
-
-  handleMajorChange = (e) => {
-    this.setState({ major: e.target.value });
-  };
-
-  handleDegreeChange = (e) => {
-    this.setState({ degree: e.target.value });
-  };
-
-  handleGraduationDateChange = (e) => {
-    this.setState({ graduationDate: e.target.value });
+  handleNewEducationForm = (e) => {
+    this.setState((state) => {
+      const educationList = state.educationList.concat(
+        <EducationForm isSubmitted={this.props.isSubmitted} />
+      );
+      return { educationList };
+    });
   };
 
   render() {
@@ -33,46 +24,12 @@ class Education extends React.Component {
         <div className="heading">
           <h1>Education</h1>
         </div>
-        {this.props.isSubmitted ? (
-          <form>
-            <label>School</label>
-            <p>{this.state.school}</p>
-            <label>Major</label>
-            <p>{this.state.major}</p>
-            <label>Degree</label>
-            <p>{this.state.degree}</p>
-            <label>Graduation Month/Year</label>
-            <p>{this.state.graduationDate}</p>
-          </form>
-        ) : (
-          <form className="edit-input">
-            <label>School</label>
-            <input
-              type="text"
-              value={this.state.school}
-              onChange={this.handleSchoolChange}
-            />
-            <label>Major</label>
-            <input
-              type="text"
-              value={this.state.major}
-              onChange={this.handleMajorChange}
-            />
-            <label>Degree</label>
-            <input
-              type="text"
-              value={this.state.degree}
-              onChange={this.handleDegreeChange}
-            />
-            <label>Graduation Month/Year</label>
-            <input
-              type="text"
-              value={this.state.graduationDate}
-              onChange={this.handleGraduationDateChange}
-            />
-            <button className="add-section">Add Education</button>
-          </form>
-        )}
+        {this.state.educationList.map((form) => (
+          <EducationForm isSubmitted={this.props.isSubmitted} />
+        ))}
+        <button className="add-section" onClick={this.handleNewEducationForm}>
+          Add Education
+        </button>
       </div>
     );
   }
