@@ -9,12 +9,14 @@ class Education extends React.Component {
     };
   }
 
-  handleNewEducationForm = (e) => {
+  handleNewEducationForm = () => {
     this.setState((state) => {
-      const educationList = state.educationList.concat(
-        <EducationForm isSubmitted={this.props.isSubmitted} />
-      );
-      return { educationList };
+      if (!this.props.isSubmitted) {
+        const educationList = state.educationList.concat(
+          <EducationForm isSubmitted={this.props.isSubmitted} />
+        );
+        return { educationList };
+      }
     });
   };
 

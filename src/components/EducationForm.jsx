@@ -61,9 +61,9 @@ class EducationForm extends React.Component {
               value={this.state.degree}
               onChange={this.handleDegreeChange}
             />
-            <label>Graduation Month/Year</label>
+            <label>Graduation Date</label>
             <input
-              type="text"
+              type="date"
               value={this.state.graduationDate}
               onChange={this.handleGraduationDateChange}
             />

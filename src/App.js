@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./components/Header";
 import General from "./components/General";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -26,14 +27,17 @@ class App extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <General isSubmitted={this.state.isSubmitted} />
-        <Education isSubmitted={this.state.isSubmitted} />
-        <Experience isSubmitted={this.state.isSubmitted} />
-        <button type="submit" onClick={this.handleClick}>
-          Edit/Submit
-        </button>
-      </form>
+      <React.Fragment>
+        <Header />
+        <form onSubmit={this.handleSubmit}>
+          <General isSubmitted={this.state.isSubmitted} />
+          <Education isSubmitted={this.state.isSubmitted} />
+          <Experience isSubmitted={this.state.isSubmitted} />
+          <button type="submit" onClick={this.handleClick}>
+            Edit/Submit
+          </button>
+        </form>
+      </React.Fragment>
     );
   }
 }
