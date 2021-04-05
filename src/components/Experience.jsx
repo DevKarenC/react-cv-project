@@ -26,8 +26,8 @@ class Experience extends React.Component {
         <div className="heading">
           <h1>Experience</h1>
         </div>
-        {this.state.experienceList.map((form) => (
-          <ExperienceForm isSubmitted={this.props.isSubmitted} />
+        {this.state.experienceList.map((form, idx) => (
+          <ExperienceForm isSubmitted={this.props.isSubmitted} key={idx} />
         ))}
         <button className="add-section" onClick={this.handleNewExperienceForm}>
           Add Experience

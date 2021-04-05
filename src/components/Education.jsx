@@ -26,8 +26,8 @@ class Education extends React.Component {
         <div className="heading">
           <h1>Education</h1>
         </div>
-        {this.state.educationList.map((form) => (
-          <EducationForm isSubmitted={this.props.isSubmitted} />
+        {this.state.educationList.map((form, idx) => (
+          <EducationForm isSubmitted={this.props.isSubmitted} key={idx} />
         ))}
         <button className="add-section" onClick={this.handleNewEducationForm}>
           Add Education

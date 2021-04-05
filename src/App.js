@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Header from "./components/Header";
-import General from "./components/General";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
+import Header from "../src/components/Header";
+import General from "../src/components/General";
+import Education from "../src/components/Education";
+import Experience from "../src/components/Experience";
 import "./styles/styles.css";
 
 class App extends Component {
