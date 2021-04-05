@@ -34,7 +34,7 @@ class App extends Component {
           <Education isSubmitted={this.state.isSubmitted} />
           <Experience isSubmitted={this.state.isSubmitted} />
           <button type="submit" onClick={this.handleClick}>
-            Edit/Submit
+            Edit/View
           </button>
         </form>
       </React.Fragment>

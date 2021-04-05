@@ -31,16 +31,19 @@ class EducationForm extends React.Component {
     return (
       <React.Fragment>
         {this.props.isSubmitted ? (
-          <React.Fragment>
+          <div className="view-input">
             <label>School</label>
             <p>{this.state.school}</p>
+            <br />
             <label>Major</label>
             <p>{this.state.major}</p>
+            <br />
             <label>Degree</label>
             <p>{this.state.degree}</p>
+            <br />
             <label>Graduation Month/Year</label>
             <p>{this.state.graduationDate}</p>
-          </React.Fragment>
+          </div>
         ) : (
           <div className="edit-input">
             <label>School</label>

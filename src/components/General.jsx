@@ -27,11 +27,13 @@ class General extends React.Component {
       <div className="section">
         <h1>General Information </h1>
         {this.props.isSubmitted ? (
-          <div>
+          <div className="view-input">
             <label>Full Name</label>
             <p>{this.state.fullName}</p>
+            <br />
             <label>Email</label>
             <p>{this.state.email}</p>
+            <br />
             <label>Phone</label>
             <p>{this.state.phone}</p>
           </div>

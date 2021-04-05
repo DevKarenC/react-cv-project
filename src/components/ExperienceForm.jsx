@@ -6,7 +6,9 @@ class ExperienceForm extends React.Component {
     this.state = {
       companyName: "",
       position: "",
-      employmentDates: "",
+      employmentDatesFrom: "",
+      employmentDatesTo: "",
+      currentJob: "",
       responsibilities: "",
     };
   }
@@ -19,8 +21,16 @@ class ExperienceForm extends React.Component {
     this.setState({ position: e.target.value });
   };
 
-  handleEmploymentDatesChange = (e) => {
+  handleEmploymentDatesFromChange = (e) => {
     this.setState({ employmentDates: e.target.value });
+  };
+
+  handleEmploymentDatesToChange = (e) => {
+    this.setState({ employmentDates: e.target.value });
+  };
+
+  handleCurrentJob = (e) => {
+    this.setState({ currentJob: e.target.checked });
   };
 
   handleResponsibilitiesChange = (e) => {
@@ -31,16 +41,25 @@ class ExperienceForm extends React.Component {
     return (
       <React.Fragment>
         {this.props.isSubmitted ? (
-          <React.Fragment>
+          <div className="view-input">
             <label>Company Name</label>
             <p>{this.state.companyName}</p>
+            <br />
             <label>Position Title</label>
             <p>{this.state.position}</p>
-            <label>Employment Dates</label>
-            <p>{this.state.employmentDates}</p>
+            <br />
+            <label>Employment Dates (From)</label>
+            <p>{this.state.employmentDatesFrom}</p>
+            <br />
+            <label>Employment Dates (To)</label>
+            <p>{this.state.employmentDatesTo}</p>
+            <br />
+            <label>Currently Working</label>
+            <p>{this.state.currentJob ? "Yes" : "No"}</p>
+            <br />
             <label>Responsibilities</label>
             <p>{this.state.responsibilities}</p>
-          </React.Fragment>
+          </div>
         ) : (
           <div className="edit-input">
             <label>Company Name</label>
@@ -55,12 +74,26 @@ class ExperienceForm extends React.Component {
               value={this.state.position}
               onChange={this.handlePositionChange}
             />
-            <label>Employment Dates </label>
+            <label>Employment Dates (From)</label>
             <input
               type="date"
-              value={this.state.employmentDates}
-              onChange={this.handleEmploymentDatesChange}
+              value={this.state.employmentDatesFrom}
+              onChange={this.handleEmploymentDatesFromChange}
             />
+            <label>Employment Dates (To)</label>
+            <input
+              type="date"
+              value={this.state.employmentDatesTo}
+              onChange={this.handleEmploymentDatesToChange}
+            />
+            <label>
+              Currently Working
+              <input
+                type="checkbox"
+                onChange={this.handleCurrentJob}
+                checked={this.state.currentJob}
+              />
+            </label>
             <label>Responsibilities</label>
             <textarea
               rows="8"
