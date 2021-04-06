@@ -11,4 +11,4 @@ This [simple CV (Resume) Builder](https://devkarenc.github.io/react-cv-project/)
 
 ## Demo
 
-<img src="" width="800px" />
+<img src="react-cv-project-demo.gif" width="800px" />
