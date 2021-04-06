@@ -22,11 +22,11 @@ class ExperienceForm extends React.Component {
   };
 
   handleEmploymentDatesFromChange = (e) => {
-    this.setState({ employmentDates: e.target.value });
+    this.setState({ employmentDatesFrom: e.target.value });
   };
 
   handleEmploymentDatesToChange = (e) => {
-    this.setState({ employmentDates: e.target.value });
+    this.setState({ employmentDatesTo: e.target.value });
   };
 
   handleCurrentJob = (e) => {

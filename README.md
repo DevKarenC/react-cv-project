@@ -10,3 +10,5 @@ This [simple CV (Resume) Builder](https://devkarenc.github.io/react-cv-project/)
 - [x] Pass down props from parent to child components
 
 ## Demo
+
+<img src="" width="800px" />
